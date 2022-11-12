@@ -630,33 +630,44 @@ li > img {
   border: 0;
   background-color: transparent;
   font-size: 24px;
+  width: 100%;
+  height: 100%;
 }
 
-.form-popup input:focus {
+.form-popup input:focus-within,
+.comment textarea:focus-within {
   outline: 0;
   caret-color: var(--tertiary-color);
-  padding-left: 20px;
+  padding-left: 36px;
   color: var(--tertiary-color);
   font-size: 16px;
   line-height: 1.14em;
   letter-spacing: 0.01em;
-  margin-block: 4px;
+  height: 100%;
+  width: 100%;
 }
 
-.fieldset-popup:has(input:focus) {
+.comment textarea:focus-within {
+  padding-inline: 16px;
+  padding-block: 12px;
+}
+
+.fieldset-popup:has(input:focus-within),
+.comment:has(textarea:focus-within) {
   fill: var(--main-color);
   border-color: var(--main-color);
   transition: fill 250ms, border-color 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-popup input::placeholder {
+.form-popup textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
   font-size: 12px;
   line-height: 1.14em;
   letter-spacing: 0.01em;
   position: absolute;
-  top: 10px;
+  top: 12px;
+  left: 16px;
 }
 
 .form-popup svg {
@@ -664,10 +675,14 @@ li > img {
   top: 13px;
 }
 
+.fieldset-popup svg {
+  left: 15px;
+}
+
 .form-popup label.check-policy {
   position: absolute;
-  top: 435px;
-  left: 40px;
+  top: 415px;
+  left: 50px;
   font-size: 14px;
   line-height: 1.71em;
   letter-spacing: 0.03em;
@@ -676,15 +691,17 @@ li > img {
   color: var(--main-color);
 }
 
-.input-comment {
-  padding: 0;
-  height: 30px;
+.comment textarea {
+  border: 0;
+  width: 448px;
+  height: 120px;
 }
 
-input.input-comment:focus {
-  padding: 0;
+.comment:has(textarea:focus-within) {
+  padding-left: 0;
   margin-block: 0;
-  max-height: 100%;
+  max-width: 446px;
+  text-overflow: inherit;
 }
 .popup-checkbox {
   visibility: hidden;
@@ -762,12 +779,12 @@ input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-input,
-textarea {
+.newsletter input,
+.newsletter textarea {
   color: rgba(255, 255, 255, 0.6);
-  padding-inline: 16px;
+  padding-left: 16px;
 }
-textarea:focus,
-input:focus {
+.newsletter textarea:focus,
+.newsletter input:focus {
   color: rgba(255, 255, 255, 0.6);
 }
