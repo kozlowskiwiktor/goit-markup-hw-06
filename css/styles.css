@@ -686,11 +686,15 @@ li > img {
   padding-block: 12px;
 }
 
-.fieldset-popup:has(input:focus),
-.fieldset-popup input:focus {
+.fieldset-popup input:focus + svg {
   fill: var(--main-color);
+  transition: fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fieldset-popup input:focus {
   border-color: var(--main-color);
-  transition: fill 250ms, border-color 250ms;
+  transition: border-color 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
