@@ -607,13 +607,16 @@ li > img {
 
 .fieldset-popup {
   position: relative;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
   margin-block: 28px;
   width: 448px;
   height: 40px;
 }
 .comment {
+  width: 448px;
+  height: 120px;
+  border: 0;
+}
+.input-comment {
   width: 448px;
   height: 120px;
   border: 0;
@@ -628,7 +631,8 @@ li > img {
   color: var(--secondary-color);
 }
 .form-popup input {
-  border: 0;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
   background-color: transparent;
   font-size: 15px;
   line-height: 1.14em;
@@ -682,7 +686,7 @@ li > img {
   padding-block: 12px;
 }
 
-.fieldset-popup:has(input:focus-within) {
+.fieldset-popup input:focus {
   fill: var(--main-color);
   border-color: var(--main-color);
   transition: fill 250ms, border-color 250ms;
@@ -694,8 +698,8 @@ textarea:focus {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-popup input:focus-within,
-.comment textarea:focus-within {
+.form-popup input:focus,
+.comment textarea:focus {
   outline: 0;
   caret-color: var(--tertiary-color);
   color: var(--tertiary-color);
