@@ -686,12 +686,14 @@ li > img {
   padding-block: 12px;
 }
 
+.fieldset-popup:has(input:focus),
 .fieldset-popup input:focus {
   fill: var(--main-color);
   border-color: var(--main-color);
   transition: fill 250ms, border-color 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 textarea:focus {
   border-color: var(--main-color);
   transition: border-color 250ms;
